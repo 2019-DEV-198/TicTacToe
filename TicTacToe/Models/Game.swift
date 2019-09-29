@@ -13,11 +13,25 @@ struct Game {
     static let height = 3
     static let win = 3
     
-    let moves: [Move]
-    let winner: Player?
+    private let moves: [Move]
+    private let gameWinner: Player?
     
     init() {
         moves = []
-        winner = nil
+        gameWinner = nil
+    }
+}
+
+extension Game: GameProtocol {
+    var winner: Player? {
+        return gameWinner
+    }
+    
+    var isComplete: Bool {
+        return false
+    }
+    
+    func add(move: Move) -> Game {
+        return self
     }
 }

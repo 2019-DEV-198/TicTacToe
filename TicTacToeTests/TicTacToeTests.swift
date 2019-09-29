@@ -10,7 +10,7 @@ import XCTest
 @testable import TicTacToe
 
 class TicTacToeTests: XCTestCase {
-    static let newGame = Game()
+    static let newGame: GameProtocol = Game()
     
     override func setUp() {
     }
