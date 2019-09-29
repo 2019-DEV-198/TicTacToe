@@ -42,6 +42,10 @@ extension Game: GameProtocol {
             return nil
         }
         
+        guard moves.count % 2 != 0 || move.player == .x else {
+            return nil
+        }
+        
         return self
     }
 }
