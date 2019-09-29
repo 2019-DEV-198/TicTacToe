@@ -34,7 +34,7 @@ extension Game: GameProtocol {
     }
     
     var isComplete: Bool {
-        return moves.count >= Game.size - 1
+        return moves.count >= Game.size
     }
     
     func add(move: Move) -> Game? {
