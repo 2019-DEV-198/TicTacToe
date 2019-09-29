@@ -66,4 +66,23 @@ class TicTacToeTests: XCTestCase {
         XCTAssertNil(oMovesAgain)
         XCTAssertNotNil(xMovesThen)
     }
+    
+    func testDrawGameIsComplete() {
+        guard let drawGame = TicTacToeTests.newGame
+            .add(move: Move(player: .x, position: 4))?
+            .add(move: Move(player: .o, position: 0))?
+            .add(move: Move(player: .x, position: 2))?
+            .add(move: Move(player: .o, position: 6))?
+            .add(move: Move(player: .x, position: 8))?
+            .add(move: Move(player: .o, position: 5))?
+            .add(move: Move(player: .x, position: 1))?
+            .add(move: Move(player: .o, position: 7))?
+            .add(move: Move(player: .x, position: 3)) else {
+            XCTFail()
+            return
+        }
+
+        XCTAssertNil(drawGame.winner)
+        XCTAssertTrue(drawGame.isComplete)
+    }
 }
