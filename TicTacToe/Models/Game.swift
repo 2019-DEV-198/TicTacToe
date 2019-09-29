@@ -12,19 +12,38 @@ struct Game {
     static let width = 3
     static let height = 3
     static var size = Game.width * Game.height
-    static let win = 3
+    static let wins = [
+        Set([0, 1, 2]), 
+        Set([3, 4, 5]),
+        Set([6, 7, 8]),
+        Set([0, 3, 6]),
+        Set([1, 4, 7]),
+        Set([2, 5, 8]),
+        Set([0, 4, 8]),
+        Set([2, 4, 6]),
+    ]
     
     private let moves: [Move]
     private let gameWinner: Player?
     
     init() {
         moves = []
-        gameWinner = nil
+        gameWinner = Game.checkWinner(moves: moves)
     }
     
     init(moves: [Move]) {
         self.moves = moves
-        gameWinner = nil
+        gameWinner = Game.checkWinner(moves: moves)
+    }
+    
+    private static func checkWinner(moves: [Move]) -> Player? {
+        return Player.all.first(where: { (player) in
+            let playerMoves = moves.filter({ $0.player == player }).map({ $0.position })
+
+            return wins.contains(where: { (win) in
+                win.isSubset(of: playerMoves)
+            })
+        })
     }
 }
 
@@ -34,7 +53,7 @@ extension Game: GameProtocol {
     }
     
     var isComplete: Bool {
-        return moves.count >= Game.size
+        return winner != nil || moves.count >= Game.size
     }
     
     func add(move: Move) -> Game? {

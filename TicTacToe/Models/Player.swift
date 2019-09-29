@@ -11,4 +11,23 @@ import Foundation
 enum Player {
     case x
     case o
+    
+    static var all: [Player] {
+        return [.x, .o]
+    }
+
+}
+
+extension Player {
+    // dummy method to ensure potential new Player cases are not missing in Player.all
+    private static func assertAllPropertyIsExhaustive() {
+        all.forEach {
+            switch $0 {
+            case x:
+                break
+            case o:
+                break
+            }
+        }
+    }
 }
