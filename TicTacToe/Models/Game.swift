@@ -11,6 +11,7 @@ import Foundation
 struct Game {
     static let width = 3
     static let height = 3
+    static var size = Game.width * Game.height
     static let win = 3
     
     private let moves: [Move]
@@ -18,6 +19,11 @@ struct Game {
     
     init() {
         moves = []
+        gameWinner = nil
+    }
+    
+    init(moves: [Move]) {
+        self.moves = moves
         gameWinner = nil
     }
 }
