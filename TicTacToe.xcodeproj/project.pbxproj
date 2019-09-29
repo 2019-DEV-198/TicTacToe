@@ -14,6 +14,9 @@
 		8E81A87C2340EC5200D31FAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E81A87B2340EC5200D31FAF /* Assets.xcassets */; };
 		8E81A87F2340EC5200D31FAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E81A87D2340EC5200D31FAF /* LaunchScreen.storyboard */; };
 		8E81A88A2340EC5200D31FAF /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A8892340EC5200D31FAF /* TicTacToeTests.swift */; };
+		8E81A8962340ECFD00D31FAF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A8952340ECFD00D31FAF /* Player.swift */; };
+		8E81A8982340ED1300D31FAF /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A8972340ED1300D31FAF /* Move.swift */; };
+		8E81A89A2340ED3800D31FAF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A8992340ED3800D31FAF /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		8E81A8852340EC5200D31FAF /* TicTacToeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81A8892340EC5200D31FAF /* TicTacToeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeTests.swift; sourceTree = "<group>"; };
 		8E81A88B2340EC5200D31FAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E81A8952340ECFD00D31FAF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		8E81A8972340ED1300D31FAF /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		8E81A8992340ED3800D31FAF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		8E81A8712340EC5100D31FAF /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				8E81A8942340ECEC00D31FAF /* Models */,
 				8E81A8722340EC5100D31FAF /* AppDelegate.swift */,
 				8E81A8742340EC5100D31FAF /* SceneDelegate.swift */,
 				8E81A8762340EC5100D31FAF /* ViewController.swift */,
@@ -97,6 +104,16 @@
 				8E81A88B2340EC5200D31FAF /* Info.plist */,
 			);
 			path = TicTacToeTests;
+			sourceTree = "<group>";
+		};
+		8E81A8942340ECEC00D31FAF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8E81A8952340ECFD00D31FAF /* Player.swift */,
+				8E81A8972340ED1300D31FAF /* Move.swift */,
+				8E81A8992340ED3800D31FAF /* Game.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +217,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E81A8982340ED1300D31FAF /* Move.swift in Sources */,
+				8E81A89A2340ED3800D31FAF /* Game.swift in Sources */,
+				8E81A8962340ECFD00D31FAF /* Player.swift in Sources */,
 				8E81A8772340EC5100D31FAF /* ViewController.swift in Sources */,
 				8E81A8732340EC5100D31FAF /* AppDelegate.swift in Sources */,
 				8E81A8752340EC5100D31FAF /* SceneDelegate.swift in Sources */,
