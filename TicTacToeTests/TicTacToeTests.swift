@@ -48,7 +48,7 @@ class TicTacToeTests: XCTestCase {
     func testMoveNotAllowedOnPlayedPosition() {
         let game = TicTacToeTests.newGame
         let afterMove = game.add(move: Move(player: .x, position: 0))
-        let afterSameMove = game.add(move: Move(player: .o, position: 0))
+        let afterSameMove = afterMove?.add(move: Move(player: .o, position: 0))
         
         XCTAssertNotNil(afterMove)
         XCTAssertNil(afterSameMove)
