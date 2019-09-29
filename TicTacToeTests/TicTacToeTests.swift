@@ -35,5 +35,14 @@ class TicTacToeTests: XCTestCase {
         let afterAMove = game.add(move: Move(player: .x, position: 0))
         XCTAssertNil(afterAMove)
     }
+    
+    func testXGoesFirst() {
+        let game = TicTacToeTests.newGame
+        let xMoves = game.add(move: Move(player: .x, position: 0))
+        let oMoves = game.add(move: Move(player: .o, position: 0))
+        
+        XCTAssertNotNil(xMoves)
+        XCTAssertNil(oMoves)
+    }
 
 }
