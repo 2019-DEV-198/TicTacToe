@@ -34,10 +34,14 @@ extension Game: GameProtocol {
     }
     
     var isComplete: Bool {
-        return false
+        return moves.count >= Game.size - 1
     }
     
-    func add(move: Move) -> Game {
+    func add(move: Move) -> Game? {
+        guard !isComplete else {
+            return nil
+        }
+        
         return self
     }
 }

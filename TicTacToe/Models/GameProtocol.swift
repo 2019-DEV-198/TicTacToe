@@ -11,5 +11,5 @@ import Foundation
 protocol GameProtocol {
     var winner: Player? { get }
     var isComplete: Bool { get }
-    func add(move: Move) -> Self
+    func add(move: Move) -> Self?
 }
