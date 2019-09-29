@@ -38,14 +38,13 @@ extension Game: GameProtocol {
     }
     
     func add(move: Move) -> Game? {
-        guard !isComplete else {
+        guard !isComplete,
+            moves.last?.player ?? .o != move.player,
+            !moves.contains(where: { $0.position == move.position })
+            else {
             return nil
         }
         
-        guard moves.count % 2 != 0 || move.player == .x else {
-            return nil
-        }
-        
-        return self
+        return Game(moves: moves + [move])
     }
 }
