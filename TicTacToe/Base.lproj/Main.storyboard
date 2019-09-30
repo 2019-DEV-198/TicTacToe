@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Board" translatesAutoresizingMaskIntoConstraints="NO" id="zD1-VW-J40">
+                                <rect key="frame" x="20" y="266" width="374" height="374"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMC-Yt-ze6">
+                                <rect key="frame" x="20" y="266" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IMC-Yt-ze6" secondAttribute="height" multiplier="1:1" id="Z5C-sM-iLN"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lmq-Xz-lKI">
+                                <rect key="frame" x="339" y="807" width="55" height="55"/>
+                                <state key="normal" image="O-grey"/>
+                                <state key="selected" image="O"/>
+                                <connections>
+                                    <action selector="oSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fos-es-Jy7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dji-tA-kkT">
+                                <rect key="frame" x="20" y="807" width="55" height="55"/>
+                                <state key="normal" image="X-grey"/>
+                                <state key="selected" image="X"/>
+                                <connections>
+                                    <action selector="xSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t35-Q5-PXF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zD1-VW-J40" firstAttribute="trailing" secondItem="IMC-Yt-ze6" secondAttribute="trailing" id="8FV-5j-CRQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lmq-Xz-lKI" secondAttribute="bottom" id="8jL-PN-AWI"/>
+                            <constraint firstItem="zD1-VW-J40" firstAttribute="leading" secondItem="IMC-Yt-ze6" secondAttribute="leading" id="H0t-Uh-nvD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IMC-Yt-ze6" secondAttribute="trailing" constant="20" id="Let-w7-f4W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dji-tA-kkT" secondAttribute="bottom" id="MrC-gh-R9g"/>
+                            <constraint firstItem="zD1-VW-J40" firstAttribute="top" secondItem="IMC-Yt-ze6" secondAttribute="top" id="O55-kg-NLH"/>
+                            <constraint firstItem="dji-tA-kkT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VSl-oJ-5pl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IMC-Yt-ze6" secondAttribute="bottom" constant="20" id="WRN-b5-K3b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lmq-Xz-lKI" secondAttribute="trailing" constant="20" id="X4s-MC-TDH"/>
+                            <constraint firstItem="IMC-Yt-ze6" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cOp-Pk-ywK"/>
+                            <constraint firstItem="zD1-VW-J40" firstAttribute="bottom" secondItem="IMC-Yt-ze6" secondAttribute="bottom" id="l3X-qy-bWD"/>
+                            <constraint firstItem="IMC-Yt-ze6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="m4C-Oe-evU"/>
+                            <constraint firstItem="IMC-Yt-ze6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="pBx-qv-bhy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="gameView" destination="IMC-Yt-ze6" id="Av0-oz-on8"/>
+                        <outlet property="oButton" destination="Lmq-Xz-lKI" id="ly5-zy-fpC"/>
+                        <outlet property="xButton" destination="dji-tA-kkT" id="ogk-FW-AIP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Board" width="218.5" height="224"/>
+        <image name="O" width="55" height="55"/>
+        <image name="O-grey" width="55" height="55"/>
+        <image name="X" width="55" height="55"/>
+        <image name="X-grey" width="55" height="55"/>
+    </resources>
 </document>

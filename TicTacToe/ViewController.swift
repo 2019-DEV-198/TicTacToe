@@ -9,12 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var gameView: UIView!
+    @IBOutlet weak var xButton: UIButton!
+    @IBOutlet weak var oButton: UIButton!
+    
+    var nextPlayer = Player.x {
+        didSet {
+            xButton.isSelected = nextPlayer == .x
+            oButton.isSelected = nextPlayer == .o
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        nextPlayer = .x
     }
-
-
+    
+    @IBAction func xSelected(_ sender: Any) {
+        nextPlayer = .x
+    }
+    
+    @IBAction func oSelected(_ sender: Any) {
+        nextPlayer = .o
+    }
 }
-
