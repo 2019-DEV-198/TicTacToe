@@ -9,13 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private let queue = DispatchQueue(label: "com.2019-DEV-198.TicTacToe")
+
     @IBOutlet weak var gameView: UIView!
     @IBOutlet weak var xButton: UIButton!
     @IBOutlet weak var oButton: UIButton!
     
-    var game: GameProtocol = Game(moves: (0..<Game.size).map {
-        Move(player: $0 % 2 == 0 ? .x : .o, position: $0)
-    }) {
+    var game: GameProtocol = Game() {
         didSet {
             updateBoard()
         }
@@ -53,10 +53,6 @@ class ViewController: UIViewController {
         attempt(move: Move(player: nextPlayer, position: position))
     }
 
-    private func attempt(move: Move) {
-        print("\(move.player) moves in position \(move.position)")
-    }
-    
     @IBAction func xSelected(_ sender: Any) {
         nextPlayer = .x
     }
@@ -65,7 +61,29 @@ class ViewController: UIViewController {
         nextPlayer = .o
     }
     
+    // MARK: -
+    
+    private func attempt(move: Move) {
+        queue.async { [weak self] in
+            guard let afterMove = self?.game.add(move: move) else {
+                DispatchQueue.main.async {
+                    self?.invalidMove()
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self?.game = afterMove
+                self?.nextPlayer = move.player.next
+            }
+        }
+    }
+    
     private func updateBoard() {
         gameView.renderGame(game)
+    }
+    
+    private func invalidMove() {
+        
     }
 }

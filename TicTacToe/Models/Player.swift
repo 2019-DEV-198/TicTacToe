@@ -12,6 +12,15 @@ enum Player {
     case x
     case o
     
+    var next: Player {
+        switch self {
+        case .x:
+            return .o
+        case .o:
+            return .x
+        }
+    }
+    
     static var all: [Player] {
         return [.x, .o]
     }

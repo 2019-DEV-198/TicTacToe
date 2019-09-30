@@ -13,12 +13,6 @@ class TicTacToeTests: XCTestCase {
     static let newGame: GameProtocol = Game.newGame
     static let fullGame: GameProtocol = Game.fullGame
 
-    override func setUp() {
-    }
-
-    override func tearDown() {
-    }
-
     func testNewGameHasNoWinner() {
         let game = TicTacToeTests.newGame
         XCTAssertNil(game.winner)
@@ -104,4 +98,8 @@ class TicTacToeTests: XCTestCase {
         XCTAssertNil(moveAfterComplete)
     }
     
+    func testNextPlayer() {
+        XCTAssertEqual(Player.x.next, .o)
+        XCTAssertEqual(Player.o.next, .x)
+    }
 }
