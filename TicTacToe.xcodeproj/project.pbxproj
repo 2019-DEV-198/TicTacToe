@@ -54,6 +54,8 @@
 		8E81A8A42342019300D31FAF /* UIViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
 		8E81A8A7234202E800D31FAF /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		8E81A8A923422B1200D31FAF /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		8E81A8AB2342361F00D31FAF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8E81A8AD2342377200D31FAF /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,8 @@
 				8E81A8712340EC5100D31FAF /* TicTacToe */,
 				8E81A8882340EC5200D31FAF /* TicTacToeTests */,
 				8E81A8702340EC5100D31FAF /* Products */,
+				8E81A8AB2342361F00D31FAF /* README.md */,
+				8E81A8AD2342377200D31FAF /* screenshot.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,13 +99,13 @@
 		8E81A8712340EC5100D31FAF /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
-				8E81A8A6234202D200D31FAF /* Extensions */,
 				8E81A8942340ECEC00D31FAF /* Models */,
+				8E81A8A6234202D200D31FAF /* Extensions */,
+				8E81A8782340EC5100D31FAF /* Main.storyboard */,
+				8E81A8762340EC5100D31FAF /* ViewController.swift */,
+				8E81A87B2340EC5200D31FAF /* Assets.xcassets */,
 				8E81A8722340EC5100D31FAF /* AppDelegate.swift */,
 				8E81A8742340EC5100D31FAF /* SceneDelegate.swift */,
-				8E81A8762340EC5100D31FAF /* ViewController.swift */,
-				8E81A8782340EC5100D31FAF /* Main.storyboard */,
-				8E81A87B2340EC5200D31FAF /* Assets.xcassets */,
 				8E81A87D2340EC5200D31FAF /* LaunchScreen.storyboard */,
 				8E81A8802340EC5200D31FAF /* Info.plist */,
 			);
