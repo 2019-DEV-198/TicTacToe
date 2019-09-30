@@ -10,6 +10,13 @@ import UIKit
 
 extension UIView {
     func gamePosition(for location: CGPoint, sizeX: Int, sizeY: Int) -> Int? {
-        return nil
+        guard bounds.contains(location) else {
+            return nil
+        }
+
+        let x = Int(location.x / (bounds.width / CGFloat(sizeX)))
+        let y = Int(location.y / (bounds.height / CGFloat(sizeY)))
+        
+        return y * sizeX + x
     }
 }
