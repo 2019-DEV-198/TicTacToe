@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - Translating touches to game position
+
 extension UIView {
     func gamePosition(for location: CGPoint, sizeX: Int, sizeY: Int) -> Int? {
         guard bounds.contains(location) else {
@@ -22,5 +24,13 @@ extension UIView {
     
     func gamePosition(for tap: UITapGestureRecognizer, sizeX: Int, sizeY: Int) -> Int? {
         return gamePosition(for: tap.location(in: self), sizeX: sizeX, sizeY: sizeY)
+    }
+}
+
+// MARK: - Rendering game state
+
+extension UIView {
+    func renderMoves(game: GameProtocol) -> [UIView] {
+        return []
     }
 }

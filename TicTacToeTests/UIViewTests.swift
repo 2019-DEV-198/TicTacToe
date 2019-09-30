@@ -10,10 +10,13 @@ import XCTest
 @testable import TicTacToe
 
 class UIViewTests: XCTestCase {
+    var view: UIView!
+    
+    override func setUp() {
+        view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+    }
 
     func testTapTranslatesToPosition() {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        
         let position0 = view.gamePosition(for: CGPoint(x: 0, y: 0), sizeX: Game.width, sizeY: Game.height)
         XCTAssertEqual(position0, 0)
 
@@ -43,5 +46,41 @@ class UIViewTests: XCTestCase {
 
         let outside = view.gamePosition(for: CGPoint(x: 0, y: 400), sizeX: Game.width, sizeY: Game.height)
         XCTAssertNil(outside)
+    }
+    
+    func testNewGameRendersNoSubviews() {
+        let newGame = TicTacToeTests.newGame
+        let subviews = view.renderMoves(game: newGame)
+        XCTAssertTrue(subviews.isEmpty)
+    }
+    
+    func testMovesRenderToSubviews() {
+        guard let game = TicTacToeTests.newGame
+            .add(move: Move(player: .x, position: 0))?
+            .add(move: Move(player: .o, position: 4))?
+            .add(move: Move(player: .x, position: 8)) else {
+                XCTFail()
+                return
+        }
+
+        let positions = getPositionsFromRenderedGame(game)
+        XCTAssertEqual(positions, [0, 4, 8])
+    }
+
+    func testFullGameRendersToSubviews() {
+        let positions = getPositionsFromRenderedGame(TicTacToeTests.fullGame)
+        XCTAssertEqual(positions, [0, 1, 2, 3, 4, 5, 6, 7, 8])
+    }
+
+    private func getPositionsFromRenderedGame(_ game: GameProtocol) -> [Int] {
+        let subviews = view.renderMoves(game: game)
+        
+        return subviews.compactMap {
+            guard let position = view.gamePosition(for: $0.center, sizeX: Game.width, sizeY: Game.height) else {
+                    return nil
+            }
+            
+            return position
+        }
     }
 }
