@@ -19,6 +19,8 @@
 		8E81A89A2340ED3800D31FAF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A8992340ED3800D31FAF /* Game.swift */; };
 		8E81A89C2340EF9300D31FAF /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A89B2340EF9300D31FAF /* GameProtocol.swift */; };
 		8E81A89E2340F62C00D31FAF /* GameExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A89D2340F62C00D31FAF /* GameExtensions.swift */; };
+		8E81A8A52342019300D31FAF /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A8A42342019300D31FAF /* UIViewTests.swift */; };
+		8E81A8A8234202E800D31FAF /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A8A7234202E800D31FAF /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		8E81A8992340ED3800D31FAF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		8E81A89B2340EF9300D31FAF /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
 		8E81A89D2340F62C00D31FAF /* GameExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameExtensions.swift; sourceTree = "<group>"; };
+		8E81A8A42342019300D31FAF /* UIViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
+		8E81A8A7234202E800D31FAF /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		8E81A8712340EC5100D31FAF /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				8E81A8A6234202D200D31FAF /* Extensions */,
 				8E81A8942340ECEC00D31FAF /* Models */,
 				8E81A8722340EC5100D31FAF /* AppDelegate.swift */,
 				8E81A8742340EC5100D31FAF /* SceneDelegate.swift */,
@@ -105,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				8E81A8892340EC5200D31FAF /* TicTacToeTests.swift */,
+				8E81A8A42342019300D31FAF /* UIViewTests.swift */,
 				8E81A88B2340EC5200D31FAF /* Info.plist */,
 				8E81A89D2340F62C00D31FAF /* GameExtensions.swift */,
 			);
@@ -120,6 +126,14 @@
 				8E81A89B2340EF9300D31FAF /* GameProtocol.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8E81A8A6234202D200D31FAF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E81A8A7234202E800D31FAF /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +239,7 @@
 			files = (
 				8E81A8982340ED1300D31FAF /* Move.swift in Sources */,
 				8E81A89A2340ED3800D31FAF /* Game.swift in Sources */,
+				8E81A8A8234202E800D31FAF /* UIViewExtensions.swift in Sources */,
 				8E81A8962340ECFD00D31FAF /* Player.swift in Sources */,
 				8E81A8772340EC5100D31FAF /* ViewController.swift in Sources */,
 				8E81A8732340EC5100D31FAF /* AppDelegate.swift in Sources */,
@@ -239,6 +254,7 @@
 			files = (
 				8E81A88A2340EC5200D31FAF /* TicTacToeTests.swift in Sources */,
 				8E81A89E2340F62C00D31FAF /* GameExtensions.swift in Sources */,
+				8E81A8A52342019300D31FAF /* UIViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
