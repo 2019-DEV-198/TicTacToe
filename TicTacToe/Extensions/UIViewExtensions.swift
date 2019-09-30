@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-    func gamePosition(for location: CGPoint) -> Int? {
+    func gamePosition(for location: CGPoint, sizeX: Int, sizeY: Int) -> Int? {
         return nil
     }
 }
