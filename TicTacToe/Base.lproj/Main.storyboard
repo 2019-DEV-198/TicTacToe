@@ -16,23 +16,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2F6-1M-flY" userLabel="Reset">
-                                <rect key="frame" x="376" y="54" width="18" height="22"/>
+                                <rect key="frame" x="376" y="64" width="18" height="22"/>
                                 <state key="normal" image="arrow.clockwise" catalog="system"/>
                                 <connections>
                                     <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J12-gg-VlS"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Board" translatesAutoresizingMaskIntoConstraints="NO" id="zD1-VW-J40">
-                                <rect key="frame" x="20" y="266" width="374" height="374"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMC-Yt-ze6">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Board" translatesAutoresizingMaskIntoConstraints="NO" id="zD1-VW-J40">
                                 <rect key="frame" x="20" y="266" width="374" height="374"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="IMC-Yt-ze6" secondAttribute="height" multiplier="1:1" id="Z5C-sM-iLN"/>
+                                    <constraint firstAttribute="width" secondItem="zD1-VW-J40" secondAttribute="height" multiplier="1:1" id="Ac9-vI-9ej"/>
                                 </constraints>
-                            </view>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lmq-Xz-lKI">
-                                <rect key="frame" x="339" y="807" width="55" height="55"/>
+                                <rect key="frame" x="339" y="787" width="55" height="55"/>
                                 <state key="normal" image="O-grey"/>
                                 <state key="selected" image="O"/>
                                 <connections>
@@ -40,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dji-tA-kkT">
-                                <rect key="frame" x="20" y="807" width="55" height="55"/>
+                                <rect key="frame" x="20" y="787" width="55" height="55"/>
                                 <state key="normal" image="X-grey"/>
                                 <state key="selected" image="X"/>
                                 <connections>
@@ -50,27 +47,23 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="IMC-Yt-ze6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="72e-qn-21c"/>
-                            <constraint firstItem="zD1-VW-J40" firstAttribute="trailing" secondItem="IMC-Yt-ze6" secondAttribute="trailing" id="8FV-5j-CRQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lmq-Xz-lKI" secondAttribute="bottom" id="8jL-PN-AWI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zD1-VW-J40" secondAttribute="bottom" priority="999" constant="20" id="56E-Cf-cdF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lmq-Xz-lKI" secondAttribute="bottom" constant="20" id="8jL-PN-AWI"/>
+                            <constraint firstItem="zD1-VW-J40" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="999" constant="20" id="BKL-eM-IpC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2F6-1M-flY" secondAttribute="trailing" constant="20" id="C9R-U0-zmb"/>
-                            <constraint firstItem="zD1-VW-J40" firstAttribute="leading" secondItem="IMC-Yt-ze6" secondAttribute="leading" id="H0t-Uh-nvD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IMC-Yt-ze6" secondAttribute="trailing" priority="999" constant="20" id="Let-w7-f4W"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dji-tA-kkT" secondAttribute="bottom" id="MrC-gh-R9g"/>
-                            <constraint firstItem="zD1-VW-J40" firstAttribute="top" secondItem="IMC-Yt-ze6" secondAttribute="top" id="O55-kg-NLH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dji-tA-kkT" secondAttribute="bottom" constant="20" id="MrC-gh-R9g"/>
                             <constraint firstItem="dji-tA-kkT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VSl-oJ-5pl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IMC-Yt-ze6" secondAttribute="bottom" priority="999" constant="20" id="WRN-b5-K3b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lmq-Xz-lKI" secondAttribute="trailing" constant="20" id="X4s-MC-TDH"/>
-                            <constraint firstItem="IMC-Yt-ze6" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cOp-Pk-ywK"/>
-                            <constraint firstItem="2F6-1M-flY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="fxu-Vt-5n6"/>
-                            <constraint firstItem="zD1-VW-J40" firstAttribute="bottom" secondItem="IMC-Yt-ze6" secondAttribute="bottom" id="l3X-qy-bWD"/>
-                            <constraint firstItem="IMC-Yt-ze6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="999" constant="20" id="m4C-Oe-evU"/>
-                            <constraint firstItem="IMC-Yt-ze6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="999" constant="20" id="pBx-qv-bhy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zD1-VW-J40" secondAttribute="trailing" priority="999" constant="20" id="auT-Me-446"/>
+                            <constraint firstItem="zD1-VW-J40" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fIA-Gj-4yh"/>
+                            <constraint firstItem="2F6-1M-flY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="fxu-Vt-5n6"/>
+                            <constraint firstItem="zD1-VW-J40" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gYG-3J-nvp"/>
+                            <constraint firstItem="zD1-VW-J40" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="999" constant="20" id="iPm-Al-X0b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="gameView" destination="IMC-Yt-ze6" id="Av0-oz-on8"/>
+                        <outlet property="gameView" destination="zD1-VW-J40" id="dOK-rx-Ud1"/>
                         <outlet property="oButton" destination="Lmq-Xz-lKI" id="ly5-zy-fpC"/>
                         <outlet property="xButton" destination="dji-tA-kkT" id="ogk-FW-AIP"/>
                     </connections>

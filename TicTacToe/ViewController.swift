@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ViewController: UIViewController {
     private let queue = DispatchQueue(label: "com.2019-DEV-198.TicTacToe")
@@ -103,6 +104,7 @@ class ViewController: UIViewController {
     }
     
     private func invalidMove() {
-        print("Invalid move!")
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        gameView.shake()
     }
 }

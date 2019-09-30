@@ -58,3 +58,23 @@ extension UIView {
         moveViews.forEach { self.addSubview($0) }
     }
 }
+
+// MARK: - Misc
+
+extension UIView {
+    func shake() {
+        let animator = UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.3) {
+            self.transform = CGAffineTransform(rotationAngle: 10 * .pi / 180)
+        }
+
+        animator.addAnimations({
+            self.transform = CGAffineTransform(rotationAngle: -10 * .pi / 180)
+        }, delayFactor: 0.1)
+
+        animator.addAnimations({
+            self.transform = .identity
+        }, delayFactor: 0.2)
+
+        animator.startAnimation()
+    }
+}
