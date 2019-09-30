@@ -19,4 +19,8 @@ extension UIView {
         
         return y * sizeX + x
     }
+    
+    func gamePosition(for tap: UITapGestureRecognizer, sizeX: Int, sizeY: Int) -> Int? {
+        return gamePosition(for: tap.location(in: self), sizeX: sizeX, sizeY: sizeY)
+    }
 }

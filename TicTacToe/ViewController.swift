@@ -24,6 +24,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         nextPlayer = .x
+        configureGestures()
+    }
+    
+    private func configureGestures() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapOnBoard(tap:)))
+        gameView.addGestureRecognizer(tap)
+    }
+
+    @objc private func tapOnBoard(tap: UITapGestureRecognizer) {
+        guard let position = gameView.gamePosition(for: tap, sizeX: Game.width, sizeY: Game.height) else {
+            return
+        }
+        
+        attempt(move: Move(player: nextPlayer, position: position))
+    }
+
+    private func attempt(move: Move) {
+        print("\(move.player) moves in position \(move.position)")
     }
     
     @IBAction func xSelected(_ sender: Any) {
