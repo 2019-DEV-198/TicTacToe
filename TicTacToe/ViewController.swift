@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var game: GameProtocol = Game() {
         didSet {
             updateBoard()
+            checkIfComplete()
         }
     }
     
@@ -61,6 +62,11 @@ class ViewController: UIViewController {
         nextPlayer = .o
     }
     
+    @IBAction func reset(_ sender: Any) {
+        game = Game()
+        nextPlayer = .x
+    }
+    
     // MARK: -
     
     private func attempt(move: Move) {
@@ -82,8 +88,21 @@ class ViewController: UIViewController {
     private func updateBoard() {
         gameView.renderGame(game)
     }
+
+    private func checkIfComplete() {
+        guard game.isComplete else {
+            return
+        }
+        
+        guard let winner = game.winner else {
+            self.displayGameAlert(message: "It's a draw.")
+            return
+        }
+        
+        self.displayGameAlert(message: "\(winner.name) won!")
+    }
     
     private func invalidMove() {
-        
+        print("Invalid move!")
     }
 }

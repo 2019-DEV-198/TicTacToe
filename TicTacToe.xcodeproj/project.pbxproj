@@ -21,6 +21,7 @@
 		8E81A89E2340F62C00D31FAF /* GameExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A89D2340F62C00D31FAF /* GameExtensions.swift */; };
 		8E81A8A52342019300D31FAF /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A8A42342019300D31FAF /* UIViewTests.swift */; };
 		8E81A8A8234202E800D31FAF /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A8A7234202E800D31FAF /* UIViewExtensions.swift */; };
+		8E81A8AA23422B1200D31FAF /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81A8A923422B1200D31FAF /* UIViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		8E81A89D2340F62C00D31FAF /* GameExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameExtensions.swift; sourceTree = "<group>"; };
 		8E81A8A42342019300D31FAF /* UIViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
 		8E81A8A7234202E800D31FAF /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		8E81A8A923422B1200D31FAF /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				8E81A8A7234202E800D31FAF /* UIViewExtensions.swift */,
+				8E81A8A923422B1200D31FAF /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				8E81A89A2340ED3800D31FAF /* Game.swift in Sources */,
 				8E81A8A8234202E800D31FAF /* UIViewExtensions.swift in Sources */,
 				8E81A8962340ECFD00D31FAF /* Player.swift in Sources */,
+				8E81A8AA23422B1200D31FAF /* UIViewControllerExtensions.swift in Sources */,
 				8E81A8772340EC5100D31FAF /* ViewController.swift in Sources */,
 				8E81A8732340EC5100D31FAF /* AppDelegate.swift in Sources */,
 				8E81A8752340EC5100D31FAF /* SceneDelegate.swift in Sources */,

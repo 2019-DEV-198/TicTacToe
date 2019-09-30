@@ -12,6 +12,15 @@ enum Player {
     case x
     case o
     
+    var name: String {
+        switch self {
+        case .x:
+            return "Xs"
+        case .o:
+            return "Os"
+        }
+    }
+    
     var next: Player {
         switch self {
         case .x:
