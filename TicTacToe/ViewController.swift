@@ -13,7 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var xButton: UIButton!
     @IBOutlet weak var oButton: UIButton!
     
-    var game: GameProtocol = Game()
+    var game: GameProtocol = Game(moves: (0..<Game.size).map {
+        Move(player: $0 % 2 == 0 ? .x : .o, position: $0)
+    }) {
+        didSet {
+            updateBoard()
+        }
+    }
     
     var nextPlayer = Player.x {
         didSet {
@@ -27,6 +33,11 @@ class ViewController: UIViewController {
         
         nextPlayer = .x
         configureGestures()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateBoard()
     }
     
     private func configureGestures() {
@@ -52,5 +63,9 @@ class ViewController: UIViewController {
     
     @IBAction func oSelected(_ sender: Any) {
         nextPlayer = .o
+    }
+    
+    private func updateBoard() {
+        gameView.renderGame(game)
     }
 }

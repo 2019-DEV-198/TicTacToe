@@ -37,7 +37,7 @@ extension UIView {
             let xIndex = move.position % game.width
             let yIndex = Int(move.position / game.width)
             let origin = CGPoint(x: CGFloat(xIndex) * cellSize.width, y: CGFloat(yIndex) * cellSize.height)
-            let rect = CGRect(origin: origin, size: cellSize).insetBy(dx: 0.1 * cellSize.width, dy: 0.1 * cellSize.height)
+            let rect = CGRect(origin: origin, size: cellSize).insetBy(dx: 0.15 * cellSize.width, dy: 0.15 * cellSize.height)
 
             let moveView = UIImageView(frame: rect)
             switch move.player {
@@ -49,5 +49,12 @@ extension UIView {
             
             return moveView
         }
+    }
+    
+    func renderGame(_ game: GameProtocol) {
+        let moveViews = renderMoves(game: game)
+        
+        subviews.forEach { $0.removeFromSuperview() }
+        moveViews.forEach { self.addSubview($0) }
     }
 }
