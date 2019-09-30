@@ -17,34 +17,36 @@ class UIViewTests: XCTestCase {
     }
 
     func testTapTranslatesToPosition() {
-        let position0 = view.gamePosition(for: CGPoint(x: 0, y: 0), sizeX: Game.width, sizeY: Game.height)
+        let game = TicTacToeTests.newGame
+
+        let position0 = view.gamePosition(for: CGPoint(x: 0, y: 0), sizeX: game.width, sizeY: game.height)
         XCTAssertEqual(position0, 0)
 
-        let position1 = view.gamePosition(for: CGPoint(x: 150, y: 50), sizeX: Game.width, sizeY: Game.height)
+        let position1 = view.gamePosition(for: CGPoint(x: 150, y: 50), sizeX: game.width, sizeY: game.height)
         XCTAssertEqual(position1, 1)
 
-        let position2 = view.gamePosition(for: CGPoint(x: 299, y: 99), sizeX: Game.width, sizeY: Game.height)
+        let position2 = view.gamePosition(for: CGPoint(x: 299, y: 99), sizeX: game.width, sizeY: game.height)
         XCTAssertEqual(position2, 2)
 
-        let position3 = view.gamePosition(for: CGPoint(x: 0, y: 150), sizeX: Game.width, sizeY: Game.height)
+        let position3 = view.gamePosition(for: CGPoint(x: 0, y: 150), sizeX: game.width, sizeY: game.height)
         XCTAssertEqual(position3, 3)
 
-        let position4 = view.gamePosition(for: CGPoint(x: 150, y: 150), sizeX: Game.width, sizeY: Game.height)
+        let position4 = view.gamePosition(for: CGPoint(x: 150, y: 150), sizeX: game.width, sizeY: game.height)
         XCTAssertEqual(position4, 4)
 
-        let position5 = view.gamePosition(for: CGPoint(x: 299, y: 150), sizeX: Game.width, sizeY: Game.height)
+        let position5 = view.gamePosition(for: CGPoint(x: 299, y: 150), sizeX: game.width, sizeY: game.height)
         XCTAssertEqual(position5, 5)
 
-        let position6 = view.gamePosition(for: CGPoint(x: 50, y: 250), sizeX: Game.width, sizeY: Game.height)
+        let position6 = view.gamePosition(for: CGPoint(x: 50, y: 250), sizeX: game.width, sizeY: game.height)
         XCTAssertEqual(position6, 6)
 
-        let position7 = view.gamePosition(for: CGPoint(x: 150, y: 201), sizeX: Game.width, sizeY: Game.height)
+        let position7 = view.gamePosition(for: CGPoint(x: 150, y: 201), sizeX: game.width, sizeY: game.height)
         XCTAssertEqual(position7, 7)
 
-        let position8 = view.gamePosition(for: CGPoint(x: 299, y: 299), sizeX: Game.width, sizeY: Game.height)
+        let position8 = view.gamePosition(for: CGPoint(x: 299, y: 299), sizeX: game.width, sizeY: game.height)
         XCTAssertEqual(position8, 8)
 
-        let outside = view.gamePosition(for: CGPoint(x: 0, y: 400), sizeX: Game.width, sizeY: Game.height)
+        let outside = view.gamePosition(for: CGPoint(x: 0, y: 400), sizeX: game.width, sizeY: game.height)
         XCTAssertNil(outside)
     }
     
@@ -76,7 +78,7 @@ class UIViewTests: XCTestCase {
         let subviews = view.renderMoves(game: game)
         
         return subviews.compactMap {
-            guard let position = view.gamePosition(for: $0.center, sizeX: Game.width, sizeY: Game.height) else {
+            guard let position = view.gamePosition(for: $0.center, sizeX: game.width, sizeY: game.height) else {
                     return nil
             }
             

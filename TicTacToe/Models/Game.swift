@@ -9,8 +9,8 @@
 import Foundation
 
 struct Game {
-    static let width = 3
-    static let height = 3
+    private static let width = 3
+    private static let height = 3
     static var size = Game.width * Game.height
     static let wins = [
         Set([0, 1, 2]), 
@@ -23,17 +23,17 @@ struct Game {
         Set([2, 4, 6]),
     ]
     
-    private let moves: [Move]
-    private let gameWinner: Player?
+    let moves: [Move]
+    let winner: Player?
     
     init() {
         moves = []
-        gameWinner = Game.checkWinner(moves: moves)
+        winner = Game.checkWinner(moves: moves)
     }
     
     init(moves: [Move]) {
         self.moves = moves
-        gameWinner = Game.checkWinner(moves: moves)
+        winner = Game.checkWinner(moves: moves)
     }
     
     private static func checkWinner(moves: [Move]) -> Player? {
@@ -48,8 +48,12 @@ struct Game {
 }
 
 extension Game: GameProtocol {
-    var winner: Player? {
-        return gameWinner
+    var width: Int {
+        return Game.width
+    }
+    
+    var height: Int {
+        return Game.height
     }
     
     var isComplete: Bool {

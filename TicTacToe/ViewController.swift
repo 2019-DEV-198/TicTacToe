@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var xButton: UIButton!
     @IBOutlet weak var oButton: UIButton!
     
+    var game: GameProtocol = Game()
+    
     var nextPlayer = Player.x {
         didSet {
             xButton.isSelected = nextPlayer == .x
@@ -33,7 +35,7 @@ class ViewController: UIViewController {
     }
 
     @objc private func tapOnBoard(tap: UITapGestureRecognizer) {
-        guard let position = gameView.gamePosition(for: tap, sizeX: Game.width, sizeY: Game.height) else {
+        guard let position = gameView.gamePosition(for: tap, sizeX: game.width, sizeY: game.height) else {
             return
         }
         

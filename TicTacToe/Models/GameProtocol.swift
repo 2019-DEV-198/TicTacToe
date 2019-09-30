@@ -9,7 +9,10 @@
 import Foundation
 
 protocol GameProtocol {
-    var winner: Player? { get }
-    var isComplete: Bool { get }
+    var width: Int { get }
+    var height: Int { get }
+    var moves: [Move] { get }
     func add(move: Move) -> Self?
+    var isComplete: Bool { get }
+    var winner: Player? { get }
 }

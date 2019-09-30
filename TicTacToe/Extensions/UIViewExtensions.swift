@@ -31,6 +31,23 @@ extension UIView {
 
 extension UIView {
     func renderMoves(game: GameProtocol) -> [UIView] {
-        return []
+        let cellSize = CGSize(width: bounds.width / CGFloat(game.width), height: bounds.height / CGFloat(game.height))
+
+        return game.moves.map { (move) in
+            let xIndex = move.position % game.width
+            let yIndex = Int(move.position / game.width)
+            let origin = CGPoint(x: CGFloat(xIndex) * cellSize.width, y: CGFloat(yIndex) * cellSize.height)
+            let rect = CGRect(origin: origin, size: cellSize).insetBy(dx: 0.1 * cellSize.width, dy: 0.1 * cellSize.height)
+
+            let moveView = UIImageView(frame: rect)
+            switch move.player {
+            case .x:
+                moveView.image = UIImage(named: "X")
+            case .o:
+                moveView.image = UIImage(named: "O")
+            }
+            
+            return moveView
+        }
     }
 }
