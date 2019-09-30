@@ -1,6 +1,6 @@
 ### Tic Tac Toe
 
-This demo project illustrates TDD in implementing a Tic Tac Toe game.
+This demo project illustrates TDD and use of immutable models in the implementation of a Tic Tac Toe game.
 
 ![App screenshot](screenshot.png)
 
